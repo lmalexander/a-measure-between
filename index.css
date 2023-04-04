@@ -1,68 +1,118 @@
 body {
-    background-color: #ECECEC;
+    background-color: #E3e3e3;
 }
 
 .tile {
-    margin: 5px;
+    margin: 2px;
     width: 100px;
     height: 100px;
-
     transform: scale(1);
-   
-
-    
 }
 
 @keyframes color {
 	0% {
-		transform: scale(0.50);
-        background-color: green;
-
-        
+		transform: scale(0.5);
 	}
 
 	100% {
 		transform: scale(1);
-        background-color: green;
 	}
-
-   
 }
 
 .yellow-line {
-    background-color: yellow;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(230, 195, 0, 0.6);
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .green-line {
-    margin: 5px;
+    margin: 2px;
     width: 100px;
     height: 100px;
-    background-color: green;
+    background-color: rgba(28, 115, 28, 0.6);
+
     animation-name: color;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .blue-line {
-    background-color: blue;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(13, 72, 161, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .indigo-line {
-    background-color: indigo;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(61, 0, 105, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .violet-line {
-    background-color: violet;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(130, 0, 230, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .red-line {
-    background-color: red;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(130, 14, 26, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .orange-line {
-    background-color: orange;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(194, 101, 14, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 .black-line {
-    background-color: black;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+.tile-word {
+    color: white;
+    text-align: center;
+}
+
+.tile-syllables {
+    color: white;
+    text-align: center;
+
 }
