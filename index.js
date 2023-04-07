@@ -118,11 +118,42 @@ function populateGrid() {
             document.getElementById([index]).setAttribute("class" , "orange-line")
         } else if (blackTiles.includes(index)) {
             document.getElementById([index]).setAttribute("class" , "black-line")
-        } 
+        }; 
         
 
 // if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
+        if (youTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = "you";
+            document.getElementById(["ts-" + index]).innerText = 1;
 
+        } else if (advTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataAdv[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataAdv[5].wordSyl;
+
+        } else if (verbTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataVerb[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataVerb[5].wordSyl;
+
+        } else if (adjTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataAdj[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataAdj[5].wordSyl;
+
+        } else if (nounTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataNoun[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataNoun[5].wordSyl;
+
+        } else if (intjTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataIntj[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataIntj[5].wordSyl;
+
+        } else if (punctTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = ambDataPunct[5].word;
+            document.getElementById(["ts-" + index]).innerText = ambDataPunct[5].wordSyl;
+
+        } else if (spaceTiles.includes(index)) {
+            document.getElementById(["tw-" + index]).innerText = "space";
+            document.getElementById(["ts-" + index]).innerText = 1;
+        }
 
 
 
