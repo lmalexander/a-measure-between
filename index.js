@@ -1,20 +1,6 @@
-console.log("i.js is connected")
+console.log("index.js is connected")
 
-let testGridOld = [
-    {
-        id: 1,
-        line: "yellow-line",
-        gridPOS: "preposition",
-
-    },
-    {
-        id: 2,
-        line: "indigo-line",
-        gridPOS: "adjective"
-    },
-
-];
-
+// make tile grid
 let testGrid = [
     1, 2, 3, 4, 5, 6, 7, 8,
     9, 10, 11, 12, 13, 14, 15, 16,
@@ -26,20 +12,6 @@ let testGrid = [
     57, 58, 59, 60, 61, 62, 63, 64
 ];
 
-let testWords = [
-    {
-        word: "black",
-        wordPOS: "adjective",
-        wordSyllable: "*",
-    },
-    {
-        word: "pynk",
-        wordPOS: "adjective",
-        wordSyllable: "*"
-    }
-]
-
-// ***** function tileGrid
 function tileGrid() {
 
     let tileGridRow = document.getElementById("tile-grid-row");
@@ -55,7 +27,7 @@ function tileGrid() {
         let tile = document.createElement("div");
         tile.className = "card tile text-center";
         tile.setAttribute("id", testGrid[i]);
-        console.log(testGrid[i]);
+        // console.log(testGrid[i]);
     
         // create card-body div
         let tileBody = document.createElement("div");
@@ -64,10 +36,13 @@ function tileGrid() {
         // create tile-word p
         let pTileWord = document.createElement("p");
         pTileWord.className = "tile-word";
+        pTileWord.setAttribute("id" , "tw-" + testGrid[i])
     
         // create tile-syllables p
         let pTileSyllable = document.createElement("p");
         pTileSyllable.className = "tile-syllable";
+        pTileSyllable.setAttribute("id" , "ts-" + testGrid[i])
+
     
         // append card elements to card
         tileBody.appendChild(pTileWord);
@@ -82,13 +57,11 @@ function tileGrid() {
         
     }
 
-
-
-
 };
 tileGrid();
 
 
+// add color
 function colorTile () {    
     document.getElementById("1").setAttribute("class" , "yellow-line");
     document.getElementById("9").setAttribute("class" , "green-line");
@@ -102,15 +75,42 @@ function colorTile () {
 };
 
 
+// add words
+let testData = [];
+let wordKey = "";
+let wordPOS = "";
+let wordSyl = 0;
+
+function ambTiles() {
+
+    for (let i = 0; i < ambData.length; i++) {
+        let wordKey = ambData[i].word;
+        let wordPOS = ambData[i].wordPOS;
+        let wordSyl = ambData[i].wordSyl;
+        
+        console.log(wordKey);
+        console.log(wordPOS);
+        console.log(wordSyl);
+     
+        testData.push({
+            "wordKEY" : wordKey,
+            "wordPOS" : wordPOS,
+            "wordSYL" : wordSyl,
+        })  
+    };
+}
+ambTiles();
+
+console.log(testData);
+console.log(testData[6]);
 
 
+function wordTiles() {
+    let activeWord = testData[6].wordKEY;
+    document.getElementById("tw-6").innerText = activeWord;
+}
+wordTiles();
 
-
-
-let activeTile = ""; 
-
-function nextTile() {
-};
 
 
 // ****** function activeTile(): 
@@ -121,3 +121,9 @@ function nextTile() {
 // if ID is 1-8, add class yellow-line etc.
 
 // add word & syllable
+
+/* 
+let activeTile = ""; 
+
+function nextTile() {
+} */;
