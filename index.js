@@ -88,88 +88,99 @@ let testData = [];
 let wordKey = "";
 let wordPOS = "";
 let wordSyl = 0;
+let activeTileID = 1;
+
 
 // every 2 seconds, return word, ID, & color to tiles based on ID:
+
+/* 
+
 function populateGrid() {
-
 // select ID from ID list
-    let activeTileID = 0;
-
     for (let index = 0; index < tileGridIDs.length; index++) {
-
         activeTileID = index;
+       popColorWordSyl(activeTileID);
+    } // for loop end
+}; // populateGrid() end
+//populateGrid();
+
+setInterval(populateGrid, 1000)
+// setInterval(popColorWordSyl, 1000)
+
+ */
+
+function popColorWordSyl() {
+   
+   // setInterval(function() {
+
+
+
+   // }, 500 ) 
+}; // popColorWordSyl() end
+
+
+
+tileGridIDs.forEach( i => {
+    setTimeout(() => {
+
+        activeTileID = i;
+
         console.log(activeTileID);
-
-// if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
-// ---- colors: Y G B I V R O B
-        if (yellowTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "yellow-line")
-        } else if (greenTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "green-line")
-        } else if (blueTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "blue-line")
-        } else if (indigoTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "indigo-line")
-        } else if (violetTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "violet-line")
-        } else if (redTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "red-line")
-        } else if (orangeTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "orange-line")
-        } else if (blackTiles.includes(index)) {
-            document.getElementById([index]).setAttribute("class" , "black-line")
+         
+    // if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
+    // ---- colors: Y G B I V R O B
+        if (yellowTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "yellow-line")
+        } else if (greenTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "green-line")
+        } else if (blueTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "blue-line")
+        } else if (indigoTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "indigo-line")
+        } else if (violetTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "violet-line")
+        } else if (redTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "red-line")
+        } else if (orangeTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "orange-line")
+        } else if (blackTiles.includes(activeTileID)) {
+            document.getElementById([activeTileID]).setAttribute("class" , "black-line")
         }; 
-        
 
-// if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
-        if (youTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = "you";
-            document.getElementById(["ts-" + index]).innerText = 1;
-
-        } else if (advTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataAdv[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataAdv[5].wordSyl;
-
-        } else if (verbTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataVerb[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataVerb[5].wordSyl;
-
-        } else if (adjTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataAdj[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataAdj[5].wordSyl;
-
-        } else if (nounTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataNoun[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataNoun[5].wordSyl;
-
-        } else if (intjTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataIntj[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataIntj[5].wordSyl;
-
-        } else if (punctTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = ambDataPunct[5].word;
-            document.getElementById(["ts-" + index]).innerText = ambDataPunct[5].wordSyl;
-
-        } else if (spaceTiles.includes(index)) {
-            document.getElementById(["tw-" + index]).innerText = "space";
-            document.getElementById(["ts-" + index]).innerText = 1;
+    // if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
+        if (youTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = "you";
+            document.getElementById(["ts-" + activeTileID]).innerText = 1;
+        } else if (advTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataAdv[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataAdv[5].wordSyl;
+        } else if (verbTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataVerb[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataVerb[5].wordSyl;
+        } else if (adjTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataAdj[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataAdj[5].wordSyl;
+        } else if (nounTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataNoun[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataNoun[5].wordSyl;
+        } else if (intjTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataIntj[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataIntj[5].wordSyl;
+        } else if (punctTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = ambDataPunct[5].word;
+            document.getElementById(["ts-" + activeTileID]).innerText = ambDataPunct[5].wordSyl;
+        } else if (spaceTiles.includes(activeTileID)) {
+            document.getElementById(["tw-" + activeTileID]).innerText = "space";
+            document.getElementById(["ts-" + activeTileID]).innerText = 1;
         }
 
 
 
 
-    } // for loop end
 
-// run function every 2 seconds
-
-
-
-    
-} // populateGrid() end
-populateGrid();
-
-
-
+     //   popColorWordSyl(activeTileID);
+    }, i * 2000);
+});
 
 
 
