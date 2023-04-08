@@ -1,23 +1,31 @@
 body {
     background-color: #E3e3e3;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 100%;
 }
 
 .tile {
-    margin: 2px;
-    width: 100px;
-    height: 100px;
+    margin: 5px;
+    width: 125px;
+    height: 125px;
     transform: scale(1);
 }
 
 .tile-word {
     color: black;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    font-weight: 100;
 }
 
 .tile-syllable {
-    color: black;
+    color: gray;
     text-align: center;
-
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75em;
+    font-weight: 200;
 }
 
 @keyframes color {
@@ -31,88 +39,56 @@ body {
 }
 
 .yellow-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(230, 195, 0, 0.7);
+    background-color: rgba(230, 195, 0, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .green-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(28, 115, 28, 0.7);
+    background-color: rgba(28, 115, 28, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .blue-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(13, 72, 161, 0.7);
+    background-color: rgba(13, 72, 161, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .indigo-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(61, 0, 105, 0.7);
+    background-color: rgba(61, 0, 105, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .violet-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(130, 0, 230, 0.7);
+    background-color: rgba(130, 0, 230, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .red-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(130, 14, 26, 0.7);
+    background-color: rgba(130, 14, 26, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .orange-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(194, 101, 14, 0.7);
+    background-color: rgba(194, 101, 14, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
 .black-line {
-    margin: 2px;
-
-    width: 100px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     animation-name: color;
     animation-duration: 2s;
     animation-iteration-count: 1;
