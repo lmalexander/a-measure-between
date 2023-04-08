@@ -1,5 +1,9 @@
 console.log("data.js")
 
+/* This dataset was processed using Chat GPT-4, with the following prompts:
+A. Identify .....
+B. Identify ..... */
+
 let ambDataNoun = [
     {
         word: "white",
