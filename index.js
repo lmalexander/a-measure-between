@@ -18,7 +18,7 @@ let adjTiles = [4, 12, 20, 28, 36, 44, 52, 60];
 let nounTiles = [5, 13, 21, 29, 37, 45, 53, 61];
 let intjTiles = [6, 14, 22, 30, 38, 46, 54, 62];
 let punctTiles = [7, 15, 23, 31, 39, 47, 55, 63];
-let spaceTiles = [8, 16, 24, 32, 40, 48, 56, 64];
+let breakTiles = [8, 16, 24, 32, 40, 48, 56, 64];
 
 // tile color ID arrays
 let yellowTiles = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -55,6 +55,7 @@ function createTileGrid() {
         // create card-body div
         let tileBody = document.createElement("div");
         tileBody.className = "card-body";
+        tileBody.setAttribute("id" , "cb-" + tileGridIDs[index]);
     
         // create tile-word p
         let pTileWord = document.createElement("p");
@@ -65,9 +66,20 @@ function createTileGrid() {
         let pTileSyllable = document.createElement("p");
         pTileSyllable.className = "tile-syllable";
         pTileSyllable.setAttribute("id" , "ts-" + tileGridIDs[index])
+
+        // create break btn
+        let btnBreakDiv = document.createElement("div");
+        btnBreakDiv.setAttribute("id" , "btn-break-div-" + tileGridIDs[index]);
+
+        // create break btn
+       // let btnBreak = document.createElement("button");
+      //  btnBreak.setAttribute("id" , "modal-btn-" + tileGridIDs[index]);
+
+
     
         // append card elements to card
         tileBody.appendChild(pTileWord);
+        tileBody.appendChild(btnBreakDiv);
         tileBody.appendChild(pTileSyllable);
         tile.appendChild(tileBody);
     
@@ -85,6 +97,8 @@ function createTileGrid() {
         
 };
 createTileGrid();
+
+
 
 
 // II: populate tile grid with words, beats, & colors
@@ -107,21 +121,21 @@ tileGridIDs.forEach( i => {
     // if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
     // ---- colors: Y G B I V R O B
         if (yellowTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "yellow-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center yellow-line")
         } else if (greenTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "green-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center green-line")
         } else if (blueTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "blue-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center blue-line")
         } else if (indigoTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "indigo-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center indigo-line")
         } else if (violetTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "violet-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center violet-line")
         } else if (redTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "red-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center red-line")
         } else if (orangeTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "orange-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center orange-line")
         } else if (blackTiles.includes(i)) {
-            document.getElementById([i]).setAttribute("class" , "black-line")
+            document.getElementById([i]).setAttribute("class" , "card tile text-center black-line")
         }; 
 
     // if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
@@ -146,9 +160,15 @@ tileGridIDs.forEach( i => {
         } else if (punctTiles.includes(i)) {
             document.getElementById(["tw-" + i]).innerText = ambDataPunct[activeWordID].word;
             document.getElementById(["ts-" + i]).innerText = ambDataPunct[activeWordID].wordSyl;
-        } else if (spaceTiles.includes(i)) {
-            document.getElementById(["tw-" + i]).innerText = "break";
-            document.getElementById(["ts-" + i]).innerText = 1;
+        } else if (breakTiles.includes(i)) {
+            let breakBtn = document.createElement("button");
+            breakBtn.innerHTML = "break"
+            breakBtn.setAttribute("type" , "button");
+            breakBtn.className = "btn btn-primary";
+            breakBtn.setAttribute("data-bs-toggle" , "modal");
+            breakBtn.setAttribute("data-bs-target" , "#modal-" + i);
+            document.getElementById(["btn-break-div-" + i]).appendChild(breakBtn);
+           // document.getElementById(["ts-" + i]).innerText = 1;
         }
     }, i * 1500);
 });
