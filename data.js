@@ -1,4 +1,4 @@
-console.log("data.js is connected")
+console.log("data.js")
 
 let ambDataNoun = [
     {
