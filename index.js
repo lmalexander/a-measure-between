@@ -95,8 +95,13 @@ function popGrid() {
         setTimeout(() => {
 
         // every 2 seconds, return word, ID, & color to tiles based on ID:
-            let activeWordID = Math.floor(Math.random() * 5) + 1;
-            
+            let activeNounID = Math.floor(Math.random() * 20) + 1;
+            let activeIntjID = Math.floor(Math.random() * 6) + 1;
+            let activePunctID = Math.floor(Math.random() * 5) + 1;
+            let activeVerbID = Math.floor(Math.random() * 19) + 1;
+            let activeAdjID = Math.floor(Math.random() * 19) + 1;
+            let activeAdvID = Math.floor(Math.random() * 20) + 1;
+   
         // if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
             if (yellowTiles.includes(i)) {
                 document.getElementById([i]).setAttribute("class" , "card tile text-center yellow-line")
@@ -121,28 +126,28 @@ function popGrid() {
                 document.getElementById(["tw-" + i]).innerText = "you";
                 document.getElementById(["ts-" + i]).innerText = 1;
             } else if (advTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
             } else if (verbTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataVerb[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataVerb[activeVerbID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
             } else if (adjTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataAdj[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataAdj[activeAdjID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
             } else if (nounTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataNoun[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataNoun[activeNounID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
             } else if (intjTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataIntj[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataIntj[activeIntjID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
             } else if (punctTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataPunct[activeWordID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataPunct[activeWordID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = ambDataPunct[activePunctID].word;
+                document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
                 let breakBtn = document.createElement("button");
                 breakBtn.innerHTML = "break"
                 breakBtn.setAttribute("type" , "button");
-                breakBtn.className = "btn btn-primary";
+                breakBtn.className = "btn btn-outline-dark btn-lg break-btn";
                 breakBtn.setAttribute("data-bs-toggle" , "modal");
                 breakBtn.setAttribute("data-bs-target" , "#modal-" + i);
                 document.getElementById(["btn-break-div-" + i]).appendChild(breakBtn);

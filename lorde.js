@@ -71,3 +71,22 @@ for (let index = 0; index < deLois.length; index++) {
     deLoisImg.push(deLois[index])
     console.log(deLoisImg);
 };
+
+let ambSongs = {
+    "Janelle Monáe": [
+        "Crazy, Classic, Life",
+        "Pynk",
+        "Float ft. Seun Kuti & Egypt 80"
+    ],
+    "Jucee Froot" : "Down In The Valley (P-Valley Theme)",
+    "Megan Thee Stallion": [
+        "Savage (Remix) ft. Beyoncé",
+        "Thot Shit"
+    ],
+    "Alex Isley" : "Still Wonder ft. Jack Dine & Robert Glasper",
+}
+
+let chatGPTPrompts = [
+        "Identify the part of speech for each word in the following list",
+        "Identify the number of syllables in every word or phrase in the following list"
+]

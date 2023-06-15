@@ -93,3 +93,8 @@ body {
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
+
+.break-btn {
+    color: rgba(0, 0, 0, 0.3);
+    border: 0px;
+}
