@@ -5,6 +5,8 @@ console.log("index.js")
 // papa parse data
 let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
 
+let rawData = [];
+
 // > papaparse CSV to JSON pull
 Papa.parse(ambGSheetURL, {
     download: true,
@@ -109,6 +111,7 @@ function createGrid() {
 };
 createGrid();
 
+
 // II: populate tile grid with words, beats, & colors
 function popGrid() {
 
@@ -178,6 +181,5 @@ function popGrid() {
         }, i * 1000);
     });
 };
-// popGrid();
 
 let popGridTimeout = setTimeout(popGrid, 20000)
