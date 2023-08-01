@@ -180,6 +180,7 @@ function showData(result) {
     });
 };
 
+setTimeout(popGrid, 20000)
 
 };
 
@@ -192,4 +193,3 @@ function showData(result) {
 
 // II: populate tile grid with words, beats, & colors
 
-let popGridTimeout = setTimeout(popGrid, 20000)
