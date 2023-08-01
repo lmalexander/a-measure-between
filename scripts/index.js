@@ -130,7 +130,7 @@ function showData(result) {
 
 
 // II: populate tile grid with words, beats, & colors
-function popGrid() {
+function popGrid(rawData) {
 
     console.log(rawData)
 
