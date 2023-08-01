@@ -95,7 +95,7 @@ createGrid();
 // papa parse data
 let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
 
-let rawDataArray = [];
+// let rawDataArray = [];
 
 // > papaparse CSV to JSON pull
 Papa.parse(ambGSheetURL, {
@@ -108,18 +108,6 @@ Papa.parse(ambGSheetURL, {
 function showData(result) {
     let rawData = result.data;
     console.log(rawData)
-
-rawDataArray.push = rawData;
- 
-
-
-
-
-
-
-};
-
-
 
    function popGrid(rawDataArray) {
 
@@ -191,6 +179,12 @@ rawDataArray.push = rawData;
         }, i * 1000);
     });
 };
+
+
+};
+
+
+
 
 
 
