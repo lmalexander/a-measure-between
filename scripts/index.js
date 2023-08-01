@@ -109,9 +109,9 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 
-   function popGrid(rawDataArray) {
+   function popGrid() {
 
-    console.log(rawDataArray)
+    console.log(rawData)
 
     tileGridIDs.forEach( i => {
 
@@ -149,23 +149,23 @@ function showData(result) {
                 document.getElementById(["tw-" + i]).innerText = "a";
                 //document.getElementById(["ts-" + i]).innerText = 1;
             } else if (verbTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawDataArray[activeVerbID].word;
+                document.getElementById(["tw-" + i]).innerText = rawData[activeVerbID].word;
                // document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
             } else if (betweenTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "between";
                 //document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
             } else if (nounOneTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawDataArray[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = rawData[activeNounID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
             } else if (andTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "and";
                //document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
             } else if (nounTwoTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawDataArray[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = rawData[activeNounID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
             } else if (intjTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawDataArray[activeIntjID].word;
+                document.getElementById(["tw-" + i]).innerText = rawData[activeIntjID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
                 let breakBtn = document.createElement("button");
