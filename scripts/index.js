@@ -1,8 +1,5 @@
 console.log("index.js")
 
-
-
-
 // ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
 
 // create tileID array
@@ -98,7 +95,7 @@ createGrid();
 // papa parse data
 let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
 
-let rawData = [];
+let rawDataArray = [];
 
 // > papaparse CSV to JSON pull
 Papa.parse(ambGSheetURL, {
@@ -112,7 +109,8 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 
-    popGrid();
+rawDataArray.push = rawData;
+ 
 
 
 
@@ -123,16 +121,9 @@ function showData(result) {
 
 
 
+   function popGrid(rawDataArray) {
 
-
-
-
-
-
-// II: populate tile grid with words, beats, & colors
-function popGrid(rawData) {
-
-    console.log(rawData)
+    console.log(rawDataArray)
 
     tileGridIDs.forEach( i => {
 
@@ -176,16 +167,16 @@ function popGrid(rawData) {
             } else if (betweenTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "between";
                 //document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
-            } else if (adjTiles.includes(i)) {
+            } else if (nounOneTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataAdj[activeAdjID].word;
                 document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
-            } else if (nounTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataNoun[activeNounID].word;
+            } else if (andTiles.includes(i)) {
+                document.getElementById(["tw-" + i]).innerText = "and";
                //document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
-            } else if (intjTiles.includes(i)) {
+            } else if (nounTwoTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataIntj[activeIntjID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
-            } else if (punctTiles.includes(i)) {
+            } else if (intjTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataPunct[activePunctID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
@@ -200,4 +191,11 @@ function popGrid(rawData) {
         }, i * 1000);
     });
 };
+
+
+
+
+
+// II: populate tile grid with words, beats, & colors
+
 let popGridTimeout = setTimeout(popGrid, 20000)
