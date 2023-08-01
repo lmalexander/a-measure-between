@@ -97,7 +97,7 @@ function createGrid() {
         btnBreakDiv.setAttribute("id" , "btn-break-div-" + tileGridIDs[index]);
     
         // append card elements to card
-        tileBody.appendChild(pTileSyllable);
+      //  tileBody.appendChild(pTileSyllable);
         tileBody.appendChild(btnBreakDiv);
         tileBody.appendChild(pTileWord);
         tile.appendChild(tileBody);
