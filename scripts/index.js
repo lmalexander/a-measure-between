@@ -128,11 +128,11 @@ let dataIntjArray = [];
     }
 
 
-};
 
 
 
-   function popGrid() {
+
+       function popGrid() {
 
    // console.log(rawData)
     console.log(dataNounsArray);
@@ -208,7 +208,13 @@ console.log(dataIntjArray);
 
  setTimeout(popGrid, 20000)
 
-// popGrid();
+
+
+};
+
+
+
+
 
 
 
