@@ -17,6 +17,7 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 };
+console.log(rawData)
 
 
 // ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
@@ -34,13 +35,13 @@ let tileGridIDs = [
 ];
 
 // tile part of speech ID arrays
-let youTiles = [1, 9, 17, 25, 33, 41, 49, 57];
-let advTiles = [2, 10, 18, 26, 34, 42, 50, 58];
-let verbTiles = [3, 11, 19, 27, 35, 43, 51, 59];
-let adjTiles = [4, 12, 20, 28, 36, 44, 52, 60];
-let nounTiles = [5, 13, 21, 29, 37, 45, 53, 61];
-let intjTiles = [6, 14, 22, 30, 38, 46, 54, 62];
-let punctTiles = [7, 15, 23, 31, 39, 47, 55, 63];
+let aTiles = [1, 9, 17, 25, 33, 41, 49, 57];
+let verbTiles = [2, 10, 18, 26, 34, 42, 50, 58];
+let betweenTiles = [3, 11, 19, 27, 35, 43, 51, 59];
+let nounOneTiles = [4, 12, 20, 28, 36, 44, 52, 60];
+let andTiles = [5, 13, 21, 29, 37, 45, 53, 61];
+let nounTwoTiles = [6, 14, 22, 30, 38, 46, 54, 62];
+let intjTiles = [7, 15, 23, 31, 39, 47, 55, 63];
 let breakTiles = [8, 16, 24, 32, 40, 48, 56, 64];
 
 // tile color ID arrays
@@ -85,9 +86,9 @@ function createGrid() {
         pTileWord.setAttribute("id" , "tw-" + tileGridIDs[index])
     
         // create tile-syllables p
-        let pTileSyllable = document.createElement("p");
-        pTileSyllable.className = "tile-syllable";
-        pTileSyllable.setAttribute("id" , "ts-" + tileGridIDs[index])
+        //let pTileSyllable = document.createElement("p");
+        //pTileSyllable.className = "tile-syllable";
+        //pTileSyllable.setAttribute("id" , "ts-" + tileGridIDs[index])
 
         // create break btn
         let btnBreakDiv = document.createElement("div");
@@ -116,12 +117,12 @@ function popGrid() {
         setTimeout(() => {
 
         // every 2 seconds, return word, ID, & color to tiles based on ID:
-            let activeNounID = Math.floor(Math.random() * 20) + 1;
-            let activeIntjID = Math.floor(Math.random() * 6) + 1;
-            let activePunctID = Math.floor(Math.random() * 5) + 1;
-            let activeVerbID = Math.floor(Math.random() * 19) + 1;
-            let activeAdjID = Math.floor(Math.random() * 19) + 1;
-            let activeAdvID = Math.floor(Math.random() * 20) + 1;
+            let activeNounID = Math.floor(Math.random() * 48) + 1;
+            let activeIntjID = Math.floor(Math.random() * 8) + 1;
+            //let activePunctID = Math.floor(Math.random() * 5) + 1;
+            let activeVerbID = Math.floor(Math.random() * 48) + 1;
+            //let activeAdjID = Math.floor(Math.random() * 19) + 1;
+            //let activeAdvID = Math.floor(Math.random() * 20) + 1;
    
         // if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
             if (yellowTiles.includes(i)) {
@@ -143,27 +144,28 @@ function popGrid() {
             }; 
 
         // if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
-            if (youTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = "you";
-                document.getElementById(["ts-" + i]).innerText = 1;
-            } else if (advTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
+            if (aTiles.includes(i)) {
+                document.getElementById(["tw-" + i]).innerText = "a";
+                //document.getElementById(["ts-" + i]).innerText = 1;
             } else if (verbTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = ambDataVerb[activeVerbID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
+                document.getElementById(["tw-" + i]).innerText = rawData[activeVerbID].word;
+               // document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
+                //document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
+            } else if (betweenTiles.includes(i)) {
+                document.getElementById(["tw-" + i]).innerText = "between";
+                //document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
             } else if (adjTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataAdj[activeAdjID].word;
                 document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
             } else if (nounTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataNoun[activeNounID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
+               //document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
             } else if (intjTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataIntj[activeIntjID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
+                //document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
             } else if (punctTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = ambDataPunct[activePunctID].word;
-                document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
+                //document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
                 let breakBtn = document.createElement("button");
                 breakBtn.innerHTML = "break"
