@@ -132,7 +132,7 @@ function showData(result) {
 
    function popGrid() {
 
-    console.log(rawData)
+   // console.log(rawData)
     console.log(dataNounsArray);
 console.log(dataVerbsArray);
 console.log(dataIntjArray);
