@@ -1,24 +1,6 @@
 console.log("index.js")
 
-// ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
 
-// papa parse data
-let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
-
-let rawData = [];
-
-// > papaparse CSV to JSON pull
-Papa.parse(ambGSheetURL, {
-    download: true,
-    header: true,
-    complete: showData,
-});
-
-// > MBLDC data return function 
-function showData(result) {
-    let rawData = result.data;
-    console.log(rawData)
-};
 
 
 // ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
@@ -111,6 +93,42 @@ function createGrid() {
 createGrid();
 
 
+// ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
+
+// papa parse data
+let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
+
+let rawData = [];
+
+// > papaparse CSV to JSON pull
+Papa.parse(ambGSheetURL, {
+    download: true,
+    header: true,
+    complete: showData,
+});
+
+// > MBLDC data return function 
+function showData(result) {
+    let rawData = result.data;
+    console.log(rawData)
+
+    popGrid();
+
+
+
+
+
+
+};
+
+
+
+
+
+
+
+
+
 // II: populate tile grid with words, beats, & colors
 function popGrid() {
 
@@ -182,5 +200,4 @@ function popGrid() {
         }, i * 1000);
     });
 };
-
 let popGridTimeout = setTimeout(popGrid, 20000)
