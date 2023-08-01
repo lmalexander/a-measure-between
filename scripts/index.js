@@ -175,7 +175,7 @@ console.log(dataIntjArray);
                 document.getElementById(["tw-" + i]).innerText = "a";
                 //document.getElementById(["ts-" + i]).innerText = 1;
             } else if (verbTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = dataVerbsArray[activeVerbID].word;
+                document.getElementById(["tw-" + i]).innerText = dataVerbsArray[activeVerbID];
                // document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
             } else if (betweenTiles.includes(i)) {
@@ -188,10 +188,10 @@ console.log(dataIntjArray);
                 document.getElementById(["tw-" + i]).innerText = "and";
                //document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
             } else if (nounTwoTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID];
                 //document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
             } else if (intjTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = dataIntjArray[activeIntjID].word;
+                document.getElementById(["tw-" + i]).innerText = dataIntjArray[activeIntjID];
                 //document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
                 let breakBtn = document.createElement("button");
