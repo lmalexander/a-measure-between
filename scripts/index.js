@@ -204,9 +204,9 @@ console.log(dataIntjArray);
     });
 };
 
-// setTimeout(popGrid, 20000)
+ setTimeout(popGrid, 20000)
 
-popGrid();
+// popGrid();
 
 
 
