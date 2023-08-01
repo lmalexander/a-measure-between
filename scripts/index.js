@@ -96,6 +96,9 @@ createGrid();
 let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
 
 // let rawDataArray = [];
+let dataVerbsArray = [];
+let dataNounsArray = [];
+let dataIntjArray = [];
 
 // > papaparse CSV to JSON pull
 Papa.parse(ambGSheetURL, {
@@ -109,9 +112,30 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 
+    for (let index = 0; index < rawData.length; index++) {
+        
+        if (rawData.partOfSpeech === "noun") {
+            dataNounsArray.push;
+        } else if (rawData.partOfSpeech === "verb") {
+            dataVerbsArray.push
+        } else if (rawData.partOfSpeech === "interjection") {
+            dataIntjArray.push
+        }
+        
+        
+    }
+
+
+};
+
+
+
    function popGrid() {
 
     console.log(rawData)
+    console.log(dataNounsArray);
+console.log(dataVerbsArray);
+console.log(dataIntjArray);
 
     tileGridIDs.forEach( i => {
 
@@ -149,23 +173,23 @@ function showData(result) {
                 document.getElementById(["tw-" + i]).innerText = "a";
                 //document.getElementById(["ts-" + i]).innerText = 1;
             } else if (verbTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawData[activeVerbID].word;
+                document.getElementById(["tw-" + i]).innerText = dataVerbsArray[activeVerbID].word;
                // document.getElementById(["tw-" + i]).innerText = ambDataAdv[activeAdvID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdv[activeAdvID].wordSyl;
             } else if (betweenTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "between";
                 //document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
             } else if (nounOneTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawData[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
             } else if (andTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "and";
                //document.getElementById(["ts-" + i]).innerText = ambDataNoun[activeNounID].wordSyl;
             } else if (nounTwoTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawData[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataIntj[activeIntjID].wordSyl;
             } else if (intjTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = rawData[activeIntjID].word;
+                document.getElementById(["tw-" + i]).innerText = dataIntjArray[activeIntjID].word;
                 //document.getElementById(["ts-" + i]).innerText = ambDataPunct[activePunctID].wordSyl;
             } else if (breakTiles.includes(i)) {
                 let breakBtn = document.createElement("button");
@@ -180,12 +204,9 @@ function showData(result) {
     });
 };
 
-setTimeout(popGrid, 20000)
+// setTimeout(popGrid, 20000)
 
-};
-
-
-
+popGrid();
 
 
 
