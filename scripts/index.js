@@ -114,12 +114,12 @@ function showData(result) {
 
     for (let index = 0; index < rawData.length; index++) {
         
-        if (rawData.partOfSpeech === "noun") {
-            dataNounsArray.push;
-        } else if (rawData.partOfSpeech === "verb") {
-            dataVerbsArray.push
-        } else if (rawData.partOfSpeech === "interjection") {
-            dataIntjArray.push
+        if (rawData[index].partOfSpeech === "noun") {
+            dataNounsArray.push = rawData[index].word;
+        } else if (rawData[index].partOfSpeech === "verb") {
+            dataVerbsArray.push = rawData[index].word
+        } else if (rawData[index].partOfSpeech === "interjection") {
+            dataIntjArray.push = rawData[index].word
         }
         
         
@@ -180,7 +180,7 @@ console.log(dataIntjArray);
                 document.getElementById(["tw-" + i]).innerText = "between";
                 //document.getElementById(["ts-" + i]).innerText = ambDataVerb[activeVerbID].wordSyl;
             } else if (nounOneTiles.includes(i)) {
-                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID].word;
+                document.getElementById(["tw-" + i]).innerText = dataNounsArray[activeNounID];
                 //document.getElementById(["ts-" + i]).innerText = ambDataAdj[activeAdjID].wordSyl;
             } else if (andTiles.includes(i)) {
                 document.getElementById(["tw-" + i]).innerText = "and";
