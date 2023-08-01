@@ -19,7 +19,6 @@ function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 };
-console.log(rawData)
 
 
 // ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** ----- *** -----
@@ -114,6 +113,8 @@ createGrid();
 
 // II: populate tile grid with words, beats, & colors
 function popGrid() {
+
+    console.log(rawData)
 
     tileGridIDs.forEach( i => {
 
