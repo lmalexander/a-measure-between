@@ -53,29 +53,29 @@ function showLorde(result) {
 
 
 let verbText = document.getElementById("verb-text");
-let adjBtnText = document.getElementById("adj-text");
+let adjText = document.getElementById("adj-text");
 let nounText = document.getElementById("noun-text");
 let lordeAudio = document.getElementById("lorde-audio");
 let breakModalBtn = document.getElementById("break-modal-btn")
 
 
 function verbTextReturn() {
-    let verbID = Math.floor(Math.random() * 48) + 1;
+    let verbID = Math.floor(Math.random() * 47) + 1;
     verbText.innerText = dataVerbsArray[verbID];
 };
 
 function adjTextReturn() {
-    let adjID = Math.floor(Math.random() * 13) + 1;
+    let adjID = Math.floor(Math.random() * 12) + 1;
     adjText.innerText = dataAdjArray[adjID];
 };
 
 function nounTextReturn() {
-    let nounID = Math.floor(Math.random() * 48) + 1;
+    let nounID = Math.floor(Math.random() * 47) + 1;
     nounText.innerText = dataNounsArray[nounID];
 };
 
 function lordeAudioReturn() {
-    let lordeID = Math.floor(Math.random() * 6) + 1;
+    let lordeID = Math.floor(Math.random() * 5) + 1;
     lordeAudio.setAttribute("src" , lordeFilepathArray[lordeID].filepath);
 }
 
