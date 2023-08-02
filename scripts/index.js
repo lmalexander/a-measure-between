@@ -21,14 +21,12 @@ let adjTiles = [7, 15, 23, 31];
 let nounTiles = [8, 16, 24, 32];
 
 // tile color ID arrays
-let yellowTiles = [1, 2, 3, 4];
-let greenTiles = [5, 6, 7, 8];
-let blueTiles = [9, 10, 11, 12];
-let indigoTiles = [13, 14, 15, 16];
-let violetTiles = [17, 18, 19, 20];
-let redTiles = [21, 22, 23, 24];
-let orangeTiles = [25, 26, 27, 28];
-let blackTiles = [29, 30, 31, 32];
+let yellowTiles = [1, 2, 3, 4, 5, 6, 7, 8];
+let greenTiles = [9, 10, 11, 12, 13, 14, 15, 16];
+let blueTiles = [17, 18, 19, 20, 21, 22, 23, 24];
+
+let redTiles = [25, 26, 27, 28, 29, 30, 31, 32];
+
 
 // variables
 let i = 1;
