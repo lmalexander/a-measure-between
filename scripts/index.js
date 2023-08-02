@@ -124,9 +124,9 @@ function popGrid() {
         setTimeout(() => {
 
         // every 2 seconds, return word, ID, & color to tiles based on ID:
-            let activeNounID = Math.floor(Math.random() * 48) + 1;
-            let activeVerbID = Math.floor(Math.random() * 48) + 1;
-            let activeAdjID = Math.floor(Math.random() * 13) + 1;
+            let activeNounID = Math.floor(Math.random() * 47) + 1;
+            let activeVerbID = Math.floor(Math.random() * 47) + 1;
+            let activeAdjID = Math.floor(Math.random() * 12) + 1;
    
         // if ID is in tile color array, find card w/matching ID & assign color-line class, else scan next array
             if (yellowTiles.includes(i)) {
