@@ -135,16 +135,8 @@ function popGrid() {
                 document.getElementById([i]).setAttribute("class" , "card tile text-center green-line")
             } else if (blueTiles.includes(i)) {
                 document.getElementById([i]).setAttribute("class" , "card tile text-center blue-line")
-            } else if (indigoTiles.includes(i)) {
-                document.getElementById([i]).setAttribute("class" , "card tile text-center indigo-line")
-            } else if (violetTiles.includes(i)) {
-                document.getElementById([i]).setAttribute("class" , "card tile text-center violet-line")
             } else if (redTiles.includes(i)) {
                 document.getElementById([i]).setAttribute("class" , "card tile text-center red-line")
-            } else if (orangeTiles.includes(i)) {
-                document.getElementById([i]).setAttribute("class" , "card tile text-center orange-line")
-            } else if (blackTiles.includes(i)) {
-                document.getElementById([i]).setAttribute("class" , "card tile text-center black-line")
             }; 
 
         // if ID is in tilePOS array, select random word + syllable count from list & return to card w/matching ID, else scan next array
