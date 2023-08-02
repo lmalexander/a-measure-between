@@ -138,16 +138,16 @@ console.log(dataIntjArray);
 };
 
 
-console.log(dataNounsArray);
-console.log(dataVerbsArray);
-console.log(dataIntjArray);
 
 
 
        function popGrid() {
 
    // console.log(rawData)
-    
+    console.log(dataNounsArray);
+console.log(dataVerbsArray);
+console.log(dataIntjArray);
+
 
     tileGridIDs.forEach( i => {
 
@@ -216,5 +216,6 @@ console.log(dataIntjArray);
     });
 };
 
- // setTimeout(popGrid, 20000)
+
+setTimeout(popGrid, 20000)
 
