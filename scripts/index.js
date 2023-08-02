@@ -105,23 +105,23 @@ Papa.parse(ambGSheetURL, {
     complete: showData,
 });
 
+let dataVerbsArray = [];
+let dataNounsArray = [];
+let dataIntjArray = [];
+
 // > MBLDC data return function 
 function showData(result) {
     let rawData = result.data;
     console.log(rawData)
 
-let dataVerbsArray = [];
-let dataNounsArray = [];
-let dataIntjArray = [];
-
     for (let index = 0; index < rawData.length; index++) {
         
         if (rawData[index].partOfSpeech === "noun") {
-            dataNounsArray.push = rawData[index].word;
+            rawData[index].word = dataNounsArray.push;
         } else if (rawData[index].partOfSpeech === "verb") {
-            dataVerbsArray.push = rawData[index].word
+            rawData[index].word = dataVerbsArray.push
         } else if (rawData[index].partOfSpeech === "interjection") {
-            dataIntjArray.push = rawData[index].word
+            rawData[index].word = dataIntjArray.push
         }
         
         
