@@ -117,11 +117,11 @@ function showData(result) {
 
     for (let index = 0; index < rawData.length; index++) {
         
-        if (rawData[index].partOfSpeech === "noun") {
+        if (rawData[index].partOfSpeech == "noun") {
             rawData[index].word = dataNounsArray.push;
-        } else if (rawData[index].partOfSpeech === "verb") {
+        } else if (rawData[index].partOfSpeech == "verb") {
             rawData[index].word = dataVerbsArray.push
-        } else if (rawData[index].partOfSpeech === "interjection") {
+        } else if (rawData[index].partOfSpeech == "interjection") {
             rawData[index].word = dataIntjArray.push
         }
         
