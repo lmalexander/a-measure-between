@@ -56,7 +56,7 @@ let verbText = document.getElementById("verb-text");
 let adjBtnText = document.getElementById("adj-text");
 let nounText = document.getElementById("noun-text");
 let lordeAudio = document.getElementById("lorde-audio");
-
+let breakModalBtn = document.getElementById("break-modal-btn")
 
 
 function verbTextReturn() {
@@ -76,10 +76,12 @@ function nounTextReturn() {
 
 function lordeAudioReturn() {
     let lordeID = Math.floor(Math.random() * 6) + 1;
-    console.log(lordeFilepathArray);
     lordeAudio.setAttribute("src" , lordeFilepathArray[lordeID].filepath);
 }
 
+function breakModalEssay() {
+
+}
 
 
 document.addEventListener("keydown", function(Event) {
@@ -98,7 +100,7 @@ document.addEventListener("keydown", function(Event) {
 
 document.addEventListener("keydown", function(Event) {
     if (Event.key == "s") {
-        adjTextReturn;
+        adjTextReturn();
         console.log("s returned an adjective");
     }
 });
