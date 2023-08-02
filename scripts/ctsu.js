@@ -76,7 +76,8 @@ function nounTextReturn() {
 
 function lordeAudioReturn() {
     let lordeID = Math.floor(Math.random() * 6) + 1;
-    lordeAudio.setAttribute("src" , lordeFilepathArray[lordeID]);
+    console.log(lordeFilepathArray);
+    lordeAudio.setAttribute("src" , lordeFilepathArray[lordeID].filepath);
 }
 
 
