@@ -96,7 +96,9 @@ createGrid();
 let ambGSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSWh26h65bH4-gzqIehi16G05IIVmsLKK0xyg9SE4BjqodEtAkfoUKD-vNAg_3tcDsvKN_NGXUvhVhV/pub?gid=0&single=true&output=csv";
 
 // let rawDataArray = [];
-
+let dataVerbsArray = [];
+let dataNounsArray = [];
+let dataIntjArray = [];
 
 // > papaparse CSV to JSON pull
 Papa.parse(ambGSheetURL, {
@@ -105,14 +107,13 @@ Papa.parse(ambGSheetURL, {
     complete: showData,
 });
 
-let dataVerbsArray = [];
-let dataNounsArray = [];
-let dataIntjArray = [];
 
-// > MBLDC data return function 
+// > data return function 
 function showData(result) {
     let rawData = result.data;
     console.log(rawData)
+    
+  
 
     for (let index = 0; index < rawData.length; index++) {
         
@@ -124,20 +125,34 @@ function showData(result) {
             rawData[index].word = dataIntjArray.push
         }
         
+        console.log(dataNounsArray);
+console.log(dataVerbsArray);
+console.log(dataIntjArray);
         
     }
 
 
+console.log(dataNounsArray);
+console.log(dataVerbsArray);
+console.log(dataIntjArray);
 
+
+
+
+
+};
+
+
+console.log(dataNounsArray);
+console.log(dataVerbsArray);
+console.log(dataIntjArray);
 
 
 
        function popGrid() {
 
    // console.log(rawData)
-    console.log(dataNounsArray);
-console.log(dataVerbsArray);
-console.log(dataIntjArray);
+    
 
     tileGridIDs.forEach( i => {
 
@@ -206,19 +221,5 @@ console.log(dataIntjArray);
     });
 };
 
- setTimeout(popGrid, 20000)
-
-
-
-};
-
-
-
-
-
-
-
-
-
-// II: populate tile grid with words, beats, & colors
+ // setTimeout(popGrid, 20000)
 
