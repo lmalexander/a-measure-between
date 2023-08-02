@@ -122,13 +122,8 @@ function showData(result) {
         } else if (rawData[index].partOfSpeech === "verb") {
              dataVerbsArray.push(rawData[index].word)
         } else if (rawData[index].partOfSpeech === "interjection") {
-             dataIntjArray.push(rawData[index].word)
+             dataIntjArray.push("interjection")
         }
-        
-        console.log(dataNounsArray);
-console.log(dataVerbsArray);
-console.log(dataIntjArray);
-        
     }
 
 
